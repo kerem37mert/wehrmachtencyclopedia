@@ -1,0 +1,15 @@
+.home-card {
+    background-color: var(--bgc);
+    border-radius: 5px;
+    color: var(--pure);
+    flex: 1;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.home-card:nth-child(n+2) {
+    margin-left: 20px;
+}

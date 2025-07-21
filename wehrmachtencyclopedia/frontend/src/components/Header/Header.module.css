@@ -1,0 +1,31 @@
+.header {
+    position: relative;
+    color: white;
+    padding: 20px;
+    z-index: 0;
+    overflow: hidden;
+    margin-bottom: 5%;
+    padding: 50px;
+    text-align: center;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('/images/bg.webp') center/cover no-repeat;
+    filter: grayscale(100%) brightness(40%);
+    z-index: -1;
+}
+
+
+.title {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
