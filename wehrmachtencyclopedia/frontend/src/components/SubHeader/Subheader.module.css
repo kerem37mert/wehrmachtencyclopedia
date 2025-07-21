@@ -1,0 +1,10 @@
+.sub-header {
+
+}
+
+.title {
+    color: var(--pure);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}

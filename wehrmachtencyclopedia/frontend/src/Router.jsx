@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 // Pages
 import Home from "./pages/Home";
-import AboutUs from "./pages/AboutsUs";
+import Dictionary from "./pages/Dictionary";
 import NotFound from "./pages/NotFound";
 
 const Router = () => {
@@ -10,7 +10,7 @@ const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={ <Home /> } />
-                <Route path="aboutus" element={ <AboutUs /> } />
+                <Route path="sozluk" element={ <Dictionary /> } />
                 <Route path="*" element={ <NotFound /> } />
             </Routes>
         </BrowserRouter>

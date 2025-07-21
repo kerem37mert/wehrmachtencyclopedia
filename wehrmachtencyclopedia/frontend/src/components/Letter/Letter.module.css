@@ -1,0 +1,21 @@
+.letter-container {
+    margin-bottom: 20px;
+}
+
+.letter {
+    color: var(--pure);
+    border-bottom: 1px solid var(--secondary);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.word {
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.desc {
+    color: var(--secondary);
+}
