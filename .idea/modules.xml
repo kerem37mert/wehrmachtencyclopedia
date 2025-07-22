@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/wehrmachtencyclopedia.iml" filepath="$PROJECT_DIR$/.idea/wehrmachtencyclopedia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wehrmacht.iml" filepath="$PROJECT_DIR$/.idea/wehrmacht.iml" />
     </modules>
   </component>
 </project>
