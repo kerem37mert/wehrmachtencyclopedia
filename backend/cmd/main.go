@@ -20,6 +20,7 @@ func main() {
 	})
 
 	e.GET("/api/dictionary", api.GetDictionary)
+	e.GET("/api/config", api.GetConfig)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }
