@@ -1,7 +1,7 @@
 package models
 
 type Dictionary struct {
-	id         int64
-	term       string
-	defination string
+	Id         int64  `json:"id"`
+	Term       string `json:"term"`
+	Defination string `json:"defination"`
 }

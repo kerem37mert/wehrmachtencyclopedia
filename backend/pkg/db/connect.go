@@ -3,14 +3,17 @@ package db
 import (
 	"context"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"log"
 )
 
-func Connect() (*pgxpool.Pool, error) {
+var DB *pgxpool.Pool
+
+func Connect() {
 	db, err := pgxpool.New(context.Background(), "postgres://postgres:1234@localhost:5432/wehrmacht")
 
 	if err != nil {
-		return nil, err
+		log.Fatal("Query error:", err)
 	}
 
-	return db, nil
+	DB = db
 }
