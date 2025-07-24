@@ -1,8 +1,8 @@
 import Header from "../../components/Header";
-import PageMeta from "../../components/PageMeta/index.js";
+import PageMeta from "../../components/PageMeta";
 
 const Generals = () => {
-    return(
+    return (
         <>
             <PageMeta title="Ana Sayfa" desc="ana sayfa" />
             <Header />
