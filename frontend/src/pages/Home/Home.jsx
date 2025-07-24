@@ -1,12 +1,14 @@
 import Header from "../../components/Header"
 import Container from "../../components/Container";
-import Row from "../../components/Row/index.js";
-import HomeCard from "../../components/HomeCard/index.js";
-import Footer from "../../components/Footer/index.js";
+import Row from "../../components/Row";
+import HomeCard from "../../components/HomeCard";
+import Footer from "../../components/Footer";
+import PageMeta from "../../components/PageMeta";
 
 const Home = () => {
     return (
         <>
+            <PageMeta title="Ana Sayfa" desc="ana sayfa" />
             <Header />
             <Container>
                 <Row>

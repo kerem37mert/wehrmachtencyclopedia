@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Container from "../../components/Container";
 import SubHeader from "../../components/SubHeader";
 import Letter from "../../components/Letter/index.js";
+import PageMeta from "../../components/PageMeta/index.js";
 
 const Dictionary = () => {
 
@@ -24,6 +25,7 @@ const Dictionary = () => {
 
     return (
         <>
+            <PageMeta title="Ana Sayfa" desc="ana sayfa" />
             <Header />
             <Container>
                 <SubHeader title="Sözlük" />
