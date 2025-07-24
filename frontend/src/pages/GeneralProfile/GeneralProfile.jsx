@@ -1,7 +1,9 @@
 import { useParams } from "react-router";
 
 import Header from "../../components/Header";
-import PageMeta from "../../components/PageMeta/index.js";
+import PageMeta from "../../components/PageMeta";
+import Container from "../../components/Container";
+import ProfileCard from "../../components/ProfileCard";
 
 const GeneralProfile = () => {
     let { id } = useParams()
@@ -10,7 +12,9 @@ const GeneralProfile = () => {
         <>
             <PageMeta title="Ana Sayfa" desc="ana sayfa" />
             <Header />
-            { id }
+            <Container>
+                <ProfileCard id={ id } />
+            </Container>
         </>
     );
 }
