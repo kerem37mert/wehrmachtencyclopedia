@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 
-const Generals = () => {
+const GeneralProfile = () => {
     return(
         <>
             <Header />
@@ -8,4 +8,4 @@ const Generals = () => {
     );
 }
 
-export default Generals;
+export default GeneralProfile;
