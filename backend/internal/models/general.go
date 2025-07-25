@@ -12,4 +12,5 @@ type General struct {
 	DeathPlace sql.NullString `json:"death_place"`
 	Bio        sql.NullString `json:"bio"`
 	PhotoURL   sql.NullString `json:"photo_url"`
+	BranchID   sql.NullInt64  `json:"branch_id"`
 }

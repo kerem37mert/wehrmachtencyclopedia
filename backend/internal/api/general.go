@@ -19,7 +19,7 @@ func GetGeneral(c echo.Context) error {
 
 	var result models.General
 
-	err := row.Scan(&result.ID, &result.Name, &result.Rank, &result.BirthDate, &result.DeathDate, &result.BirthPlace, &result.DeathPlace, &result.Bio, &result.PhotoURL)
+	err := row.Scan(&result.ID, &result.Name, &result.Rank, &result.BirthDate, &result.DeathDate, &result.BirthPlace, &result.DeathPlace, &result.Bio, &result.PhotoURL, &result.BranchID)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]string{
 			"error": err.Error(),
@@ -43,7 +43,7 @@ func GetGenerals(c echo.Context) error {
 	var result []models.General
 	for rows.Next() {
 		var general models.General
-		err := rows.Scan(&general.ID, &general.Name, &general.Rank, &general.BirthDate, &general.DeathDate, &general.BirthPlace, &general.DeathPlace, &general.Bio, &general.PhotoURL)
+		err := rows.Scan(&general.ID, &general.Name, &general.Rank, &general.BirthDate, &general.DeathDate, &general.BirthPlace, &general.DeathPlace, &general.Bio, &general.PhotoURL, &general.BranchID)
 
 		if err != nil {
 			return c.JSON(http.StatusInternalServerError, map[string]string{
