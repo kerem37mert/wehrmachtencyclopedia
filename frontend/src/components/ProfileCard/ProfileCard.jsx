@@ -1,6 +1,19 @@
+import {useEffect, useState} from "react";
 import styles from "./ProfileCard.module.css";
 
 const ProfileCard = ({ id }) => {
+
+    const [general, setGeneral] = useState({});
+
+    useEffect(() => {
+        fetch(`http://localhost:8000/api/general/${id}`,{
+            method: "GET"
+        })
+            .then(res => res.json())
+            .then(data => setGeneral(data))
+            .catch(err => console.log(err));
+    }, [id]);
+
     return (
         <div className={ styles["profile-card"] }>
             <div className={ styles["profile-header"]}>
@@ -8,12 +21,12 @@ const ProfileCard = ({ id }) => {
                     <img src="/manstein.jpg" alt=""/>
                 </div>
                 <div className={ styles.summary }>
-                    <h1 className={styles.title}>Erich Von Manstein</h1>
+                    <h1 className={ styles.title }>{ general.name?.String }</h1>
                     <div className={ styles["summary-list"] }>
                         <div className={ styles["summary-item-container"] }>
-                            <p>Rütbe: Feldmareşal</p>
-                            <p>Doğum Tarihi: 20 Kasım 1888</p>
-                            <p>Ölüm Tarihi: 20 KAsım 1955</p>
+                            <p>Rütbe: { general.rank?.String }</p>
+                            <p>Doğum Tarihi: { general.birth_date?.Time }</p>
+                            <p>Ölüm Tarihi: { general.death_date?.Time }</p>
                         </div>
                     </div>
                 </div>
