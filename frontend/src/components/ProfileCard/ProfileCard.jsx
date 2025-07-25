@@ -18,7 +18,7 @@ const ProfileCard = ({ id }) => {
         <div className={ styles["profile-card"] }>
             <div className={ styles["profile-header"]}>
                 <div className={ styles["image-container"] }>
-                    <img src="/manstein.jpg" alt=""/>
+                    <img src={ general.photo_url?.String } alt=""/>
                 </div>
                 <div className={ styles.summary }>
                     <h1 className={ styles.title }>{ general.name?.String }</h1>

@@ -3,7 +3,7 @@ import PageMeta from "../../components/PageMeta/index.js";
 const NotFound = () => {
     return(
         <>
-            <PageMeta title="Ana Sayfa" desc="ana sayfa" />
+            <PageMeta title="Ana Sayfa" desc="Sayfa Bulunmadı" />
             Error: 404
         </>
     );
