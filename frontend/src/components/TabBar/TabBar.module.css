@@ -1,3 +1,22 @@
 .tab-bar {
+    display: flex;
+}
 
+.tab-bar-item {
+    flex: 1;
+    background-color: var(--bgc);
+    color: var(--pure);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    transition: background-color 0.1s;
+}
+
+.tab-bar-item:hover {
+    background-color: var(--bg);
+}
+
+.active {
+    border: 1px solid var(--secondary);
 }
