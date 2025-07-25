@@ -11,12 +11,13 @@ import (
 func main() {
 	e := echo.New()
 	e.Use(middleware.CORS())
+	e.Static("/static", "static")
 
 	db.Connect()
 	defer db.DB.Close()
 
 	e.GET("/", func(c echo.Context) error {
-		return c.HTML(http.StatusOK, "<h1>WERHMACT</h1>")
+		return c.HTML(http.StatusOK, "<h1>WEHRMACHT</h1>")
 	})
 
 	e.GET("/api/dictionary", api.GetDictionary)
