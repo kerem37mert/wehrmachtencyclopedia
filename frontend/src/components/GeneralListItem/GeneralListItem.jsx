@@ -1,6 +1,11 @@
+import styles from "./GeneralListItem.module.css";
+import { Link } from "react-router";
+
 const GeneralListItem = ({ info }) => {
     return (
-        <div>{ info.name.String }</div>
+        <Link to={`/general-profil/${info.id}`} className={ styles.item }>
+            {info.rank.String} {info.name.String}
+        </Link>
     );
 }
 
