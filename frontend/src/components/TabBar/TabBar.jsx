@@ -1,7 +1,7 @@
 import styles from "./TabBar.module.css"
 import { useEffect, useState } from "react";
 
-const TabBar = ({ active }) => {
+const TabBar = ({ active, onChange }) => {
 
     const [branches, setBranches] = useState([]);
 
@@ -19,7 +19,9 @@ const TabBar = ({ active }) => {
                 <a
                     key={ branch.id }
                     className={ branch.id === active ? styles["tab-bar-item"] + " " + styles.active : styles["tab-bar-item"] }
-                    href="javascript:void(0)">
+                    href="javascript:void(0)"
+                    onClick={ () => onChange(branch.id) }
+                >
                     { branch.name }
                 </a>
             )) }
