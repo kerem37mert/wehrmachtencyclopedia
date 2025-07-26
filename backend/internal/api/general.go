@@ -56,3 +56,33 @@ func GetGenerals(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, result)
 }
+
+func GetGeneralsForBranch(c echo.Context) error {
+	branch := c.Param("branch")
+
+	rows, err := db.DB.Query(context.Background(), "SELECT * FROM generals LEFT JOIN branch ON generals.branch_id=branch.id WHERE generals.branch_id=$1", branch)
+
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{
+			"error": err.Error(),
+		})
+	}
+
+	defer rows.Close()
+
+	var result []models.General
+	for rows.Next() {
+		var general models.General
+		err := rows.Scan(&general.ID, &general.Name, &general.Rank, &general.BirthDate, &general.DeathDate, &general.BirthPlace, &general.DeathPlace, &general.Bio, &general.PhotoURL, &general.BranchID)
+
+		if err != nil {
+			return c.JSON(http.StatusInternalServerError, map[string]string{
+				"error": err.Error(),
+			})
+		}
+
+		result = append(result, general)
+	}
+
+	return c.JSON(http.StatusOK, result)
+}
