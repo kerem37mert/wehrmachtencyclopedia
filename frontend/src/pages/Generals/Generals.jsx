@@ -1,8 +1,10 @@
 import Header from "../../components/Header";
 import PageMeta from "../../components/PageMeta";
 import Container from "../../components/Container";
-import TabBar from "../../components/TabBar/index.js";
+import TabBar from "../../components/TabBar";
+import GeneralList from "../../GeneralList";
 import { useEffect, useState } from "react";
+
 
 const Generals = () => {
 
@@ -22,11 +24,7 @@ const Generals = () => {
             <Header />
             <Container>
                 <TabBar active={ branchId } onChange={(newId) => setBranchId(newId)} />
-                {
-                    generals && generals.map(general => (
-                        <div key={ general.id }>{ general.name?.String }</div>
-                    ))
-                }
+                <GeneralList generals={ generals } />
             </Container>
         </>
     );
