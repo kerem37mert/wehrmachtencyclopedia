@@ -23,8 +23,8 @@ const Generals = () => {
             <Container>
                 <TabBar active={ branchId } onChange={(newId) => setBranchId(newId)} />
                 {
-                    generals.map(general => (
-                        <div>{ general.name.String }</div>
+                    generals && generals.map(general => (
+                        <div key={ general.id }>{ general.name?.String }</div>
                     ))
                 }
             </Container>
