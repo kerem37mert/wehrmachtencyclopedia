@@ -13,7 +13,7 @@ const Generals = () => {
             <PageMeta title="Ana Sayfa" desc="Generaller" />
             <Header />
             <Container>
-                <TabBar />
+                <TabBar active={ branchId } />
             </Container>
         </>
     );

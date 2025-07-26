@@ -1,11 +1,28 @@
 import styles from "./TabBar.module.css"
+import { useEffect, useState } from "react";
 
-const TabBar = () => {
+const TabBar = ({ active }) => {
+
+    const [branches, setBranches] = useState([]);
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/api/branches`)
+            .then(res => res.json())
+            .then(data => setBranches(data))
+            .catch(err => console.log(err));
+
+    }, []);
+
     return (
         <div className={ styles["tab-bar"] }>
-            <a className={ styles["tab-bar-item"] + " " + styles.active } href="">Lutwaffe</a>
-            <a className={ styles["tab-bar-item"] } href="">Heer</a>
-            <a className={ styles["tab-bar-item"] } href="">Kriegsmarine</a>
+            { branches.map((branch) => (
+                <a
+                    key={ branch.id }
+                    className={ branch.id === active ? styles["tab-bar-item"] + " " + styles.active : styles["tab-bar-item"] }
+                    href="javascript:void(0)">
+                    { branch.name }
+                </a>
+            )) }
         </div>
     );
 }
