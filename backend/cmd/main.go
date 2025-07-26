@@ -24,6 +24,7 @@ func main() {
 	e.GET("/api/config", api.GetConfig)
 	e.GET("/api/general/:id", api.GetGeneral)
 	e.GET("/api/generals", api.GetGenerals)
+	e.GET("/api/branches", api.GetBranches)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }
