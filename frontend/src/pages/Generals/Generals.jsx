@@ -7,11 +7,12 @@ import { useEffect, useState } from "react";
 const Generals = () => {
 
     const [branchId, setBranchId] = useState(1);
+    const [generals, setGenerals] = useState([]);
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_BACKEND_URL}/api/generals-for-branch/${branchId}`)
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setGenerals(data))
             .catch(err => console.log(err));
     }, [branchId]);
 
@@ -21,6 +22,11 @@ const Generals = () => {
             <Header />
             <Container>
                 <TabBar active={ branchId } onChange={(newId) => setBranchId(newId)} />
+                {
+                    generals.map(general => (
+                        <div>{ general.name.String }</div>
+                    ))
+                }
             </Container>
         </>
     );
