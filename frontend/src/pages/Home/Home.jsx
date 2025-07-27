@@ -4,6 +4,7 @@ import Row from "../../components/Row";
 import HomeCard from "../../components/HomeCard";
 import Footer from "../../components/Footer";
 import PageMeta from "../../components/PageMeta";
+import DailyQuote from "../../components/DailyQuote";
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <PageMeta title="Ana Sayfa" desc="ana sayfa" />
             <Header />
             <Container>
+                <DailyQuote />
                 <Row>
                     <HomeCard
                         title="Wehrmacht Sözlüğü"
