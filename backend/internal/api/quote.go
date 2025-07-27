@@ -9,7 +9,7 @@ import (
 )
 
 func GetQuote(c echo.Context) error {
-	row := db.DB.QueryRow(context.Background(), "SELECT * FROM quotes")
+	row := db.DB.QueryRow(context.Background(), "SELECT * FROM quotes ORDER BY hashtext(CURRENT_DATE::TEXT) LIMIT 1")
 
 	var result models.Quote
 
