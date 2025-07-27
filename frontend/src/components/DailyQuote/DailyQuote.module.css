@@ -6,3 +6,10 @@
     margin-bottom: 40px;
     padding: 10px;
 }
+
+.author {
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+}
