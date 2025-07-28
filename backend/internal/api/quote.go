@@ -23,3 +23,31 @@ func GetQuote(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, result)
 }
+
+func GetQuotes(c echo.Context) error {
+	rows, err := db.DB.Query(context.Background(), "SELECT * FROM quotes")
+
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{
+			"error": err.Error(),
+		})
+	}
+
+	var results []models.Quote
+
+	for rows.Next() {
+		var result models.Quote
+
+		err := rows.Scan(&result.ID, &result.Quote, &result.Author, &result.Source, &result.DateUsed)
+
+		if err != nil {
+			return c.JSON(http.StatusInternalServerError, map[string]string{
+				"error": err.Error(),
+			})
+		}
+
+		results = append(results, result)
+	}
+
+	return c.JSON(http.StatusOK, results)
+}

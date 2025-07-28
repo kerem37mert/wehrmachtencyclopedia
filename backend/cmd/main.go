@@ -27,6 +27,7 @@ func main() {
 	e.GET("/api/branches", api.GetBranches)
 	e.GET("/api/generals-for-branch/:branch_id", api.GetGeneralsForBranch)
 	e.GET("/api/quote", api.GetQuote)
+	e.GET("/api/quotes", api.GetQuotes)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }
