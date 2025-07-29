@@ -8,6 +8,7 @@ import GeneralProfile from "./pages/GeneralProfile";
 import NotFound from "./pages/NotFound";
 import AdminLayout from "./components/AdminLayout/index.js";
 import AdminLogin from "./pages/AdminLogin/index.js";
+import AdminHome from "./pages/AdminHome/index.js";
 
 const Router = () => {
     return(
@@ -18,8 +19,8 @@ const Router = () => {
                 <Route path="generaller" element={ <Generals /> } />
                 <Route path="general-profil/:id" element={ <GeneralProfile /> } />
                 <Route path="admin" element={ <AdminLayout /> } >
-                    <Route path="login" element={ <AdminLogin /> } />
-                    <Route path="home" element={ <Home /> } />
+                    <Route path="giris" element={ <AdminLogin /> } />
+                    <Route index element={ <AdminHome /> } />
                 </Route>
                 <Route path="*" element={ <NotFound /> } />
             </Routes>
