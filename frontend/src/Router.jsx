@@ -19,8 +19,9 @@ const Router = () => {
                 <Route path="generaller" element={ <Generals /> } />
                 <Route path="general-profil/:id" element={ <GeneralProfile /> } />
                 <Route path="admin" element={ <AdminLayout /> } >
-                    <Route path="giris" element={ <AdminLogin /> } />
                     <Route index element={ <AdminHome /> } />
+                    <Route path="giris" element={ <AdminLogin /> } />
+                    <Route path="*" element={<>admin 404</>} />
                 </Route>
                 <Route path="*" element={ <NotFound /> } />
             </Routes>
