@@ -1,7 +1,9 @@
+import AdminLoginBox from "../../components/AdminLoginBox";
+
 const AdminLogin = () => {
     return(
         <>
-            admin login
+            <AdminLoginBox />
         </>
     )
 }
