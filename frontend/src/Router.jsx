@@ -6,9 +6,10 @@ import Dictionary from "./pages/Dictionary";
 import Generals from "./pages/Generals";
 import GeneralProfile from "./pages/GeneralProfile";
 import NotFound from "./pages/NotFound";
-import AdminLayout from "./components/AdminLayout/index.js";
-import AdminLogin from "./pages/AdminLogin/index.js";
-import AdminHome from "./pages/AdminHome/index.js";
+import AdminLayout from "./components/AdminLayout";
+import AdminLogin from "./pages/AdminLogin";
+import AdminHome from "./pages/AdminHome";
+import AdminNotFound from "./pages/AdminNotFound";
 
 const Router = () => {
     return(
@@ -21,7 +22,7 @@ const Router = () => {
                 <Route path="admin" element={ <AdminLayout /> } >
                     <Route index element={ <AdminHome /> } />
                     <Route path="giris" element={ <AdminLogin /> } />
-                    <Route path="*" element={<>admin 404</>} />
+                    <Route path="*" element={ <AdminNotFound /> } />
                 </Route>
                 <Route path="*" element={ <NotFound /> } />
             </Routes>
