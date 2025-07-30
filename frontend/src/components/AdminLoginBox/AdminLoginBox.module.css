@@ -1,3 +1,38 @@
 .login-box {
-    background-color: red;
+    margin: 100px auto;
+    width: 40%;
+}
+
+.login-box input {
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.login-box button {
+    cursor: pointer;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.message {
+
+    color: var(--pure);
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media(max-width: 768px) {
+    .login-box {
+        width: 60%;
+    }
 }
