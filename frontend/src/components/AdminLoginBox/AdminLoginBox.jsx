@@ -5,6 +5,7 @@ const AdminLoginBox = () => {
 
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [isError, setIsError] = useState(false);
 
     const loginHandler = () => {
         fetch(`${import.meta.env.VITE_BACKEND_URL}/api/admin/login`, {
@@ -19,7 +20,9 @@ const AdminLoginBox = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     return (
@@ -37,7 +40,11 @@ const AdminLoginBox = () => {
             <button onClick={ loginHandler }>
                 Giriş Yap
             </button>
-            <div className={ styles.message }>Lütfen giriş bilgilerinizi kontrol ediniz</div>
+            {
+                isError && (
+                    <div className={ styles.message }>Lütfen giriş bilgilerinizi kontrol ediniz</div>
+                )
+            }
         </div>
     );
 }
