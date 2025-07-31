@@ -4,7 +4,8 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"net/http"
-	"wehrmachtencyclopedia/internal/api"
+	"wehrmachtencyclopedia/internal/api/admin"
+	"wehrmachtencyclopedia/internal/api/public"
 	"wehrmachtencyclopedia/pkg/db"
 )
 
@@ -20,14 +21,16 @@ func main() {
 		return c.HTML(http.StatusOK, "<h1>WEHRMACHT</h1>")
 	})
 
-	e.GET("/api/dictionary", api.GetDictionary)
-	e.GET("/api/config", api.GetConfig)
-	e.GET("/api/general/:id", api.GetGeneral)
-	e.GET("/api/generals", api.GetGenerals)
-	e.GET("/api/branches", api.GetBranches)
-	e.GET("/api/generals-for-branch/:branch_id", api.GetGeneralsForBranch)
-	e.GET("/api/quote", api.GetQuote)
-	e.GET("/api/quotes", api.GetQuotes)
+	e.GET("/api/dictionary", public.GetDictionary)
+	e.GET("/api/config", public.GetConfig)
+	e.GET("/api/general/:id", public.GetGeneral)
+	e.GET("/api/generals", public.GetGenerals)
+	e.GET("/api/branches", public.GetBranches)
+	e.GET("/api/generals-for-branch/:branch_id", public.GetGeneralsForBranch)
+	e.GET("/api/quote", public.GetQuote)
+	e.GET("/api/quotes", public.GetQuotes)
+
+	e.POST("/api/admin/login", admin.PostLogin)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }
