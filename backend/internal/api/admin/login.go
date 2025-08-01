@@ -27,8 +27,9 @@ func PostLogin(c echo.Context) error {
 	err := row.Scan(&result.Id)
 
 	if err != nil {
-		return c.JSON(http.StatusInternalServerError, map[string]string{
-			"error": err.Error(),
+		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
+			"success": false,
+			"error":   err.Error(),
 		})
 	}
 
@@ -42,12 +43,15 @@ func PostLogin(c echo.Context) error {
 
 	tokenString, err := token.SignedString([]byte(jwtKey))
 	if err != nil {
-		return c.JSON(http.StatusInternalServerError, echo.Map{
-			"error": "Token üretilemedi",
+		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
+			"success": false,
+			"error":   "can not token created",
 		})
 	}
 
-	return c.JSON(http.StatusOK, echo.Map{
-		"token": tokenString,
+	return c.JSON(http.StatusOK, map[string]interface{}{
+		"success": true,
+		"token":   tokenString,
 	})
+
 }

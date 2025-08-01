@@ -1,11 +1,14 @@
 import styles from "./AdminLoginBox.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {useNavigate} from "react-router";
 
 const AdminLoginBox = () => {
 
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [isError, setIsError] = useState(false);
+    const [result, setResult] = useState({});
+
+    const navigate = useNavigate();
 
     const loginHandler = () => {
         fetch(`${import.meta.env.VITE_BACKEND_URL}/api/admin/login`, {
@@ -19,7 +22,13 @@ const AdminLoginBox = () => {
             })
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                setResult(data)
+                if(data.success) {
+                    localStorage.setItem("user", JSON.stringify(data.token));
+                    navigate("/admin/home");
+                }
+            })
             .catch((err) => {
                 console.log(err);
             });
@@ -41,8 +50,8 @@ const AdminLoginBox = () => {
                 Giriş Yap
             </button>
             {
-                isError && (
-                    <div className={ styles.message }>Lütfen giriş bilgilerinizi kontrol ediniz</div>
+                !result.success && (
+                    <div className={ styles.message }>{ result.error }</div>
                 )
             }
         </div>
