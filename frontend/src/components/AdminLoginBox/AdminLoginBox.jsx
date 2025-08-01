@@ -25,7 +25,6 @@ const AdminLoginBox = () => {
             .then(data => {
                 setResult(data)
                 if(data.success) {
-                    console.log(data)
                     localStorage.setItem("user", JSON.stringify(data.token));
                     navigate("/admin/home");
                 }

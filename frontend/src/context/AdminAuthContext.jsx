@@ -1,5 +1,5 @@
-import {createContext, useEffect, useState} from "react";
-import jwt_decode from "jwt-decode";
+import { createContext, useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
 
 const AdminAuthContext = createContext();
 
@@ -11,7 +11,7 @@ const AdminAuthProvider = ({ children }) => {
 
         if(user) {
             try {
-                const decoded = jwt_decode(user);
+                const decoded = jwtDecode(user);
                 const now = Date.now() / 1000;
 
                 if(decoded.exp > now)
