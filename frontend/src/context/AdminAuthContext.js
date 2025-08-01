@@ -1,9 +1,30 @@
-import { createContext, useState } from "react";
+import {createContext, useEffect, useState} from "react";
+import jwt_decode from "jwt-decode";
 
 const AdminAuthContext = createContext();
 
 const AdminAuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        const user = localStorage.getItem("user");
+
+        if(user) {
+            try {
+                const decoded = jwt_decode(user);
+                const now = Date.now() / 1000;
+
+                if(decoded.exp > now)
+                    setIsAuthenticated(true)
+                else
+                    localStorage.removeItem("user");
+
+            } catch(err) {
+                console.log(err)
+                localStorage.removeItem("user");
+            }
+        }
+    }, []);
 
     return (
         <AdminAuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
