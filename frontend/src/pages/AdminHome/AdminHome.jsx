@@ -1,6 +1,12 @@
+import AdminContainer from "../../components/AdminContainer/index.js";
+
 const AdminHome = () => {
     return (
-        <>adminhome</>
+        <>
+            <AdminContainer>
+                kerem
+            </AdminContainer>
+        </>
     );
 }
 

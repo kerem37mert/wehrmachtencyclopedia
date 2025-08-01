@@ -8,7 +8,7 @@ const AdminLogin = () => {
     const { isAuthenticated } = useContext(AdminAuthContext);
 
     if(isAuthenticated)
-        return <Navigate to="/admin/home" replace />;
+        return <Navigate to="/admin" replace />;
 
     return(
         <>
