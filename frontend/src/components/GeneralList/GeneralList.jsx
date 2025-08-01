@@ -1,5 +1,5 @@
 import styles from "./GeneralList.module.css";
-import GeneralListItem from "../components/GeneralListItem";
+import GeneralListItem from "../GeneralListItem/index.js";
 
 const GeneralList = ({ generals }) => {
     return (

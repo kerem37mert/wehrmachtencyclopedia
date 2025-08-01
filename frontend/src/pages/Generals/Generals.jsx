@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import PageMeta from "../../components/PageMeta";
 import Container from "../../components/Container";
 import TabBar from "../../components/TabBar";
-import GeneralList from "../../GeneralList";
+import GeneralList from "../../components/GeneralList";
 import { useEffect, useState } from "react";
 
 

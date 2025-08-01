@@ -1,6 +1,6 @@
 import styles from "./AdminLoginBox.module.css";
-import { useEffect, useState } from "react";
-import {useNavigate} from "react-router";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const AdminLoginBox = () => {
 
@@ -25,6 +25,7 @@ const AdminLoginBox = () => {
             .then(data => {
                 setResult(data)
                 if(data.success) {
+                    console.log(data)
                     localStorage.setItem("user", JSON.stringify(data.token));
                     navigate("/admin/home");
                 }
