@@ -10,6 +10,7 @@ import AdminLayout from "./components/AdminLayout";
 import AdminLogin from "./pages/AdminLogin";
 import AdminHome from "./pages/AdminHome";
 import AdminNotFound from "./pages/AdminNotFound";
+import AdminGenerals from "./pages/AdminGenerals";
 
 const Router = () => {
     return(
@@ -22,6 +23,7 @@ const Router = () => {
                 <Route path="giris" element={ <AdminLogin /> } />
                 <Route path="admin" element={ <AdminLayout /> } >
                     <Route index element={ <AdminHome /> } />
+                    <Route path="generaller" element={ <AdminGenerals /> } />
                     <Route path="*" element={ <AdminNotFound /> } />
                 </Route>
                 <Route path="*" element={ <NotFound /> } />

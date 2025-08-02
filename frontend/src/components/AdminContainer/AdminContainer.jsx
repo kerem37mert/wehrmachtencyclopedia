@@ -7,6 +7,7 @@ const AdminContainer = ({ children }) => {
             <AdminMenu />
             <div className={ styles.content }>
                 { children }
+                <h1>sdfsdf</h1>
             </div>
         </div>
     );

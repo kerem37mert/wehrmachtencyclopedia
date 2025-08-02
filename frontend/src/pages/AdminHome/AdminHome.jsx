@@ -1,4 +1,4 @@
-import AdminContainer from "../../components/AdminContainer/index.js";
+import AdminContainer from "../../components/AdminContainer";
 
 const AdminHome = () => {
     return (

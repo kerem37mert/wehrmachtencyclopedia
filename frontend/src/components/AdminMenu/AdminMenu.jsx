@@ -17,7 +17,7 @@ const AdminMenu = () => {
             <div className={ styles["link-container"] }>
                 <Link to="/admin">Ana Sayfa</Link>
                 <Link to="/admin">Sözlük</Link>
-                <Link to="/admin">Generaller</Link>
+                <Link to="/admin/generaller">Generaller</Link>
             </div>
             <div className={ styles["menu-bottom"] } onClick={ logOut }>
                 Çıkış yap
