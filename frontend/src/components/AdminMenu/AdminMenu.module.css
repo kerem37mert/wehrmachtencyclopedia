@@ -1,7 +1,32 @@
 .menu-container {
     flex: 1;
+    background: royalblue;
+    width: 25%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
-.content {
-    flex: 3;
+.link-container a {
+    color: var(--pure);
+    display: block;
+    padding: 7.5px 10%;
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+.link-container a:hover {
+    background-color: var(--bgc);
+}
+
+.menu-bottom {
+    cursor: pointer;
+    color: var(--pure);
+    background: var(--error);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 10px;
 }

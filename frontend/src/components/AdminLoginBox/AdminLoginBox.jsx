@@ -1,6 +1,7 @@
 import styles from "./AdminLoginBox.module.css";
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useContext, useState } from "react";
+import { AdminAuthContext } from "../../context/AdminAuthContext.jsx";
+
 
 const AdminLoginBox = () => {
 
@@ -8,7 +9,7 @@ const AdminLoginBox = () => {
     const [password, setPassword] = useState("");
     const [result, setResult] = useState({});
 
-    const navigate = useNavigate();
+    const { setIsAuthenticated } = useContext(AdminAuthContext);
 
     const loginHandler = () => {
         fetch(`${import.meta.env.VITE_BACKEND_URL}/api/admin/login`, {
@@ -26,7 +27,7 @@ const AdminLoginBox = () => {
                 setResult(data)
                 if(data.success) {
                     localStorage.setItem("user", JSON.stringify(data.token));
-                    navigate("/admin");
+                    setIsAuthenticated(true);
                 }
             })
             .catch((err) => {

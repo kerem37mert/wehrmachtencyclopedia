@@ -24,7 +24,7 @@ const AdminAuthProvider = ({ children }) => {
                 localStorage.removeItem("user");
             }
         }
-    }, []);
+    }, [isAuthenticated]);
 
     return (
         <AdminAuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
