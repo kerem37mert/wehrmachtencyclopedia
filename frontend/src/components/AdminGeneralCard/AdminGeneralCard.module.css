@@ -30,3 +30,23 @@
     text-align: center;
     margin: 16px 0;
 }
+
+.buttons {
+    display: flex;
+}
+
+.buttons div {
+    color: var(--pure);
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+}
+
+.edit {
+    background-color: var(--blue);
+}
+
+.remove {
+    background-color: var(--error);
+}

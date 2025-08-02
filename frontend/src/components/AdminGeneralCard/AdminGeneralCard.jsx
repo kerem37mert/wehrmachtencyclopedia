@@ -7,6 +7,10 @@ const AdminGeneralCard = ({ general }) => {
                 <img src={ general.photo_url?.String } alt={ general.name?.String } />
             </div>
             <h2 className={ styles.title }>{ general.name?.String }</h2>
+            <div className={ styles.buttons }>
+                <div className={ styles.edit }>Düzenle</div>
+                <div className={ styles.remove }>Sil</div>
+            </div>
         </div>
     );
 }
