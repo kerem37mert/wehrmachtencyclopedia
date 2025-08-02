@@ -1,6 +1,7 @@
 .header {
     background-color: var(--bgc);
     padding: 15px 5%;
+    border-bottom: 1px solid var(--pure);
 }
 
 .title {

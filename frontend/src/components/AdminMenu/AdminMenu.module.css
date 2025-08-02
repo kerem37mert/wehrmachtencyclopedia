@@ -1,7 +1,7 @@
 .menu-container {
-    background: royalblue;
+    background: var(--blue);
     width: 25%;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
 }
