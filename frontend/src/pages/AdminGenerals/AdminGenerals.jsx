@@ -1,10 +1,11 @@
 import AdminContainer from "../../components/AdminContainer";
+import AdminHeader from "../../components/AdminHeader";
 
 const AdminGenerals = () => {
     return (
         <>
             <AdminContainer>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem earum explicabo minus perspiciatis. Cumque cupiditate debitis excepturi mollitia nobis perspiciatis recusandae rerum voluptas voluptates! Aliquam distinctio dolores itaque modi praesentium!
+                <AdminHeader title="Generaller" />
             </AdminContainer>
         </>
     );
