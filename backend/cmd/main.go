@@ -4,7 +4,6 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"net/http"
-	"wehrmachtencyclopedia/internal/api/admin"
 	"wehrmachtencyclopedia/internal/api/public"
 	"wehrmachtencyclopedia/pkg/db"
 )
@@ -30,7 +29,7 @@ func main() {
 	e.GET("/api/quote", public.GetQuote)
 	e.GET("/api/quotes", public.GetQuotes)
 
-	e.POST("/api/admin/login", admin.PostLogin)
+	e.POST("/api/login", public.PostLogin)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }
