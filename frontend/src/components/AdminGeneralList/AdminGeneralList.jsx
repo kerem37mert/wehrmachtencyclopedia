@@ -17,7 +17,11 @@ const AdminGeneralList = () => {
         <div className={ styles.container }>
             {
                 generals.map((general) => (
-                    <AdminGeneralCard key={general.id} general={general} />
+                    <AdminGeneralCard
+                        key={general.id}
+                        general={general}
+                        onDelete={(id) => setGenerals(prev => prev.filter(g => g.id !== id))}
+                    />
                 ))
             }
         </div>

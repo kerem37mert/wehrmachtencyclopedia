@@ -26,7 +26,7 @@ const AdminLoginBox = () => {
             .then(data => {
                 setResult(data)
                 if(data.success) {
-                    localStorage.setItem("user", JSON.stringify(data.token));
+                    localStorage.setItem("user", data.token);
                     setIsAuthenticated(true);
                 }
             })

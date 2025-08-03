@@ -39,7 +39,7 @@ func PostLogin(c echo.Context) error {
 		"exp":  time.Now().Add(time.Hour * 24).Unix(),
 	})
 
-	var jwtKey = []byte(os.Getenv("JWT_KEY"))
+	var jwtKey = []byte(os.Getenv("JWT_SECRET_KEY"))
 
 	tokenString, err := token.SignedString([]byte(jwtKey))
 	if err != nil {
