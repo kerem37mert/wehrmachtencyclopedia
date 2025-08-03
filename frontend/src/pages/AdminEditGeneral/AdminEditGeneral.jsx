@@ -2,6 +2,7 @@ import AdminContainer from "../../components/AdminContainer";
 import {useParams} from "react-router";
 import AdminHeader from "../../components/AdminHeader";
 import AdminFormContainer from "../../components/AdminFormContainer";
+import AdminFormInput from "../../components/AdminFormInput";
 
 const AdminEditGeneral = () => {
 
@@ -12,7 +13,7 @@ const AdminEditGeneral = () => {
             <AdminContainer>
                 <AdminHeader title="General Düzenle" />
                 <AdminFormContainer>
-                    { id }
+                    <AdminFormInput />
                 </AdminFormContainer>
             </AdminContainer>
         </>
