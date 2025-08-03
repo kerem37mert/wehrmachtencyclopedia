@@ -14,6 +14,7 @@ const AdminEditGeneral = () => {
                 <AdminHeader title="General Düzenle" />
                 <AdminFormContainer>
                     <AdminFormInput />
+                    <AdminFormInput />
                 </AdminFormContainer>
             </AdminContainer>
         </>
