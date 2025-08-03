@@ -11,6 +11,7 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminHome from "./pages/AdminHome";
 import AdminNotFound from "./pages/AdminNotFound";
 import AdminGenerals from "./pages/AdminGenerals";
+import AdminEditGeneral from "./pages/AdminEditGeneral";
 
 const Router = () => {
     return(
@@ -24,6 +25,7 @@ const Router = () => {
                 <Route path="admin" element={ <AdminLayout /> } >
                     <Route index element={ <AdminHome /> } />
                     <Route path="generaller" element={ <AdminGenerals /> } />
+                    <Route path="general-duzenle/:id" element={ <AdminEditGeneral /> } />
                     <Route path="*" element={ <AdminNotFound /> } />
                 </Route>
                 <Route path="*" element={ <NotFound /> } />

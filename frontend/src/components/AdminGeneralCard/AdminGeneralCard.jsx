@@ -1,6 +1,9 @@
 import styles from "./AdminGeneralCard.module.css";
+import { useNavigate } from "react-router";
 
 const AdminGeneralCard = ({ general, onDelete }) => {
+
+    const navigate = useNavigate();
 
     const removeHandler = (id) => {
         fetch(`${import.meta.env.VITE_BACKEND_URL}/api/admin/remove-general/${id}`, {
@@ -20,6 +23,10 @@ const AdminGeneralCard = ({ general, onDelete }) => {
             .catch(err => console.log(err));
     }
 
+    const editHandler = (id) => {
+        navigate(`/admin/general-duzenle/${id}`, {})
+    }
+
     return (
         <div className={ styles.card }>
             <div className={ styles["img-container"] }>
@@ -27,7 +34,12 @@ const AdminGeneralCard = ({ general, onDelete }) => {
             </div>
             <h2 className={ styles.title }>{ general.name?.String }</h2>
             <div className={ styles.buttons }>
-                <div className={ styles.edit }>Düzenle</div>
+                <div
+                    className={ styles.edit }
+                    onClick={ () => editHandler(general.id) }
+                >
+                    Düzenle
+                </div>
                 <div
                     className={ styles.remove }
                     onClick={ () => removeHandler(general.id) }
