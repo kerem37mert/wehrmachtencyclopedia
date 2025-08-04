@@ -1,8 +1,10 @@
 import AdminContainer from "../../components/AdminContainer";
-import {useParams} from "react-router";
+import { useParams } from "react-router";
 import AdminHeader from "../../components/AdminHeader";
 import AdminFormContainer from "../../components/AdminFormContainer";
 import AdminFormInput from "../../components/AdminFormInput";
+import AdminFormLabel from "../../components/AdminFormLabel";
+import AdminFormText from "../../components/AdminFormText";
 
 const AdminEditGeneral = () => {
 
@@ -13,8 +15,12 @@ const AdminEditGeneral = () => {
             <AdminContainer>
                 <AdminHeader title="General Düzenle" />
                 <AdminFormContainer>
+                    <AdminFormLabel text="General İsmi" />
                     <AdminFormInput />
+                    <AdminFormLabel text="General Rütbesi" />
                     <AdminFormInput />
+                    <AdminFormLabel text="General Biyografisi" />
+                    <AdminFormText />
                 </AdminFormContainer>
             </AdminContainer>
         </>
