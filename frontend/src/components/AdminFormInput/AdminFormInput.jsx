@@ -1,10 +1,11 @@
 import styles from "./AdminFormInput.module.css";
 
-const AdminFormInput = ({ onChange }) => {
+const AdminFormInput = ({ value, onChange }) => {
     return (
         <input
             type={"text"}
             className={ styles.input }
+            value={ value }
             onChange={ onChange }
         />
     );

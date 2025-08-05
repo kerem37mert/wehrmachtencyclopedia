@@ -6,10 +6,19 @@ import AdminFormInput from "../../components/AdminFormInput";
 import AdminFormLabel from "../../components/AdminFormLabel";
 import AdminFormText from "../../components/AdminFormText";
 import AdminFormButton from "../../components/AdminFormButton/index.js";
+import {useEffect, useState} from "react";
 
 const AdminEditGeneral = () => {
 
     const { id } = useParams()
+    const [general, setGeneral] = useState({});
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/api/general/${id}`)
+            .then(res => res.json())
+            .then(data => setGeneral(data))
+            .catch(err => console.log(err));
+    }, [id]);
 
     return (
         <>
@@ -17,12 +26,12 @@ const AdminEditGeneral = () => {
                 <AdminHeader title="General Düzenle" />
                 <AdminFormContainer>
                     <AdminFormLabel text="General İsmi" />
-                    <AdminFormInput />
+                    <AdminFormInput value={ general.name?.String } />
                     <AdminFormLabel text="General Rütbesi" />
-                    <AdminFormInput />
+                    <AdminFormInput value={ general.rank?.String } />
                     <AdminFormLabel text="General Biyografisi" />
-                    <AdminFormText />
-                    <AdminFormButton text="Ekle" />
+                    <AdminFormText value={ general.bio?.String } />
+                    <AdminFormButton text="Güncelle" />
                 </AdminFormContainer>
             </AdminContainer>
         </>
