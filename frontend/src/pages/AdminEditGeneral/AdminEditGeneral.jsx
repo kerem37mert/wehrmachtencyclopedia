@@ -5,6 +5,7 @@ import AdminFormContainer from "../../components/AdminFormContainer";
 import AdminFormInput from "../../components/AdminFormInput";
 import AdminFormLabel from "../../components/AdminFormLabel";
 import AdminFormText from "../../components/AdminFormText";
+import AdminFormButton from "../../components/AdminFormButton/index.js";
 
 const AdminEditGeneral = () => {
 
@@ -21,6 +22,7 @@ const AdminEditGeneral = () => {
                     <AdminFormInput />
                     <AdminFormLabel text="General Biyografisi" />
                     <AdminFormText />
+                    <AdminFormButton text="Ekle" />
                 </AdminFormContainer>
             </AdminContainer>
         </>
