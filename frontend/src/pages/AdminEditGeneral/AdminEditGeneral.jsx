@@ -20,18 +20,30 @@ const AdminEditGeneral = () => {
             .catch(err => console.log(err));
     }, [id]);
 
+    const updateField = (field, value) => {
+        setGeneral((prev) => ({
+            ...prev,
+            [field]: {
+                String: value,
+                Valid: value.trim() !== "",
+            },
+        }));
+
+        console.log(general);
+    }
+
     return (
         <>
             <AdminContainer>
                 <AdminHeader title="General Düzenle" />
                 <AdminFormContainer>
                     <AdminFormLabel text="General İsmi" />
-                    <AdminFormInput value={ general.name?.String } />
+                    <AdminFormInput value={ general.name?.String } onChange={ (e) => updateField("name", e.target.value) } />
                     <AdminFormLabel text="General Rütbesi" />
-                    <AdminFormInput value={ general.rank?.String } />
+                    <AdminFormInput value={ general.rank?.String } onChange={ (e) => updateField("rank", e.target.value) } />
                     <AdminFormLabel text="General Biyografisi" />
-                    <AdminFormText value={ general.bio?.String } />
-                    <AdminFormButton text="Güncelle" />
+                    <AdminFormText value={ general.bio?.String } onChange={ (e) => updateField("bio", e) } />
+                    <AdminFormButton text="Güncelle"  />
                 </AdminFormContainer>
             </AdminContainer>
         </>

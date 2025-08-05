@@ -1,10 +1,11 @@
 import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
 
-const AdminFormText = ({ value }) => {
+const AdminFormText = ({ value, onChange }) => {
     return (
         <SunEditor
             defaultValue={ value }
+            onChange={ onChange }
             setOptions={{
                 height: 300,
                 buttonList: [
