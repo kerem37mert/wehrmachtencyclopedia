@@ -33,7 +33,17 @@ const AdminEditGeneral = () => {
     }
 
     const updateHandler = () => {
-        //fetch(`${import.meta.env.VITE_BACKEND_URL}/api/general/${id}`)
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/api/admin/update-general/${id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("user")}`,
+            },
+            body: JSON.stringify(general),
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
     }
 
     return (
