@@ -69,6 +69,7 @@ func main() {
 	})
 
 	adminGroup.DELETE("/remove-general/:id", admin.DeleteGeneral)
+	adminGroup.POST("/update-general/:id", admin.UpdateGeneral)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }
