@@ -6,7 +6,7 @@ import AdminFormInput from "../../components/AdminFormInput";
 import AdminFormLabel from "../../components/AdminFormLabel";
 import AdminFormText from "../../components/AdminFormText";
 import AdminFormButton from "../../components/AdminFormButton/index.js";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const AdminEditGeneral = () => {
 
@@ -32,6 +32,10 @@ const AdminEditGeneral = () => {
         console.log(general);
     }
 
+    const updateHandler = () => {
+        //fetch(`${import.meta.env.VITE_BACKEND_URL}/api/general/${id}`)
+    }
+
     return (
         <>
             <AdminContainer>
@@ -43,7 +47,7 @@ const AdminEditGeneral = () => {
                     <AdminFormInput value={ general.rank?.String } onChange={ (e) => updateField("rank", e.target.value) } />
                     <AdminFormLabel text="General Biyografisi" />
                     <AdminFormText value={ general.bio?.String } onChange={ (e) => updateField("bio", e) } />
-                    <AdminFormButton text="Güncelle"  />
+                    <AdminFormButton text="Güncelle" onClick={ updateHandler } />
                 </AdminFormContainer>
             </AdminContainer>
         </>
