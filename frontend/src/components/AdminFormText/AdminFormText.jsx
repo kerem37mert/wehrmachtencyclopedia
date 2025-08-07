@@ -4,8 +4,10 @@ import "suneditor/dist/css/suneditor.min.css";
 const AdminFormText = ({ value, onChange }) => {
     return (
         <SunEditor
-            defaultValue={ value }
-            onChange={ onChange }
+            setContents={ value || "" }
+            onChange={(content) => {
+                onChange(content);
+            }}
             setOptions={{
                 height: 300,
                 buttonList: [

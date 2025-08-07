@@ -40,7 +40,7 @@ func UpdateGeneral(c echo.Context) error {
 		})
 	}
 
-	_, err := db.DB.Exec(context.Background(), "UPDATE generals SET name=$1, rank=$3, bio=$3 WHERE id=$4", general.Name, general.Rank, general.Bio, id)
+	_, err := db.DB.Exec(context.Background(), "UPDATE generals SET name=$1, rank=$2, bio=$3 WHERE id=$4", general.Name, general.Rank, general.Bio, id)
 
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
