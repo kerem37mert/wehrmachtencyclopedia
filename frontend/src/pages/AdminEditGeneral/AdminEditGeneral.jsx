@@ -7,11 +7,13 @@ import AdminFormLabel from "../../components/AdminFormLabel";
 import AdminFormText from "../../components/AdminFormText";
 import AdminFormButton from "../../components/AdminFormButton/index.js";
 import { useEffect, useState } from "react";
+import AdminMessageBox from "../../components/AdminMessageBox/index.js";
 
 const AdminEditGeneral = () => {
 
     const { id } = useParams()
     const [general, setGeneral] = useState({});
+    const [result, setResult] = useState({});
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_BACKEND_URL}/api/general/${id}`)
@@ -42,7 +44,7 @@ const AdminEditGeneral = () => {
             body: JSON.stringify(general),
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setResult(data))
             .catch(err => console.log(err));
     }
 
@@ -58,6 +60,9 @@ const AdminEditGeneral = () => {
                     <AdminFormLabel text="General Biyografisi" />
                     <AdminFormText value={ general.bio?.String } onChange={ (e) => updateField("bio", e) } />
                     <AdminFormButton text="Güncelle" onClick={ updateHandler } />
+                    {
+                        <AdminMessageBox isError={ !result.success } message={ result.success ? "Güncelleme Başarılı" : result.error } />
+                    }
                 </AdminFormContainer>
             </AdminContainer>
         </>

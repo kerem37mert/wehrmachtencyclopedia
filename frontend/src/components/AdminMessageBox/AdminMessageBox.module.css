@@ -1,0 +1,11 @@
+.container {
+    text-align: center;
+}
+
+.success {
+    background-color: var(--blue);
+}
+
+.error {
+    background-color: var(--error);
+}
