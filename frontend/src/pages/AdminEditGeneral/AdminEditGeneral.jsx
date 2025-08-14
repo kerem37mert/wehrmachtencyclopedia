@@ -61,7 +61,7 @@ const AdminEditGeneral = () => {
                     <AdminFormText value={ general.bio?.String } onChange={ (e) => updateField("bio", e) } />
                     <AdminFormButton text="Güncelle" onClick={ updateHandler } />
                     {
-                        <AdminMessageBox isError={ !result.success } message={ result.success ? "Güncelleme Başarılı" : result.error } />
+                        result.success && <AdminMessageBox isError={ !result.success } message={ result.success ? "Güncelleme Başarılı" : result.error } />
                     }
                 </AdminFormContainer>
             </AdminContainer>
