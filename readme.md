@@ -1,4 +1,4 @@
-# Wehrmacht 
+# Wehrmacht Ansiklopedisi
 
 BİLGİLENDİRME: Bu proje, tarihsel bir araştırma ve arşiv çalışmasıdır.
 Amacı; II. Dünya Savaşı dönemindeki askeri, siyasi ve toplumsal gelişmeleri ele almak, belgeleri derlemek ve bilgiyi düzenli bir şekilde sunmaktır.
